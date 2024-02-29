@@ -179,6 +179,7 @@ jobs:
       if: env.REPO_TOKEN
       run: |
         cd openwrt
+        sed -i '1i src-git haibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
         source ${BUILD_PATH}/common.sh && Diy_menu3
  
     - name: 加载自定义设置
